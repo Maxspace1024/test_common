@@ -239,6 +239,11 @@ public:
 		this->nowTime = t;
 	}
 
+	void setTimer(int t){
+		this->time = t;
+		this->nowTime = t;
+	}
+
 	void drawTimer(Player *p) {
 		glDisable(GL_LIGHTING);
 		{
@@ -551,6 +556,10 @@ public:
 	Ground(float minX, float maxX, int pathLen) {
 		this->minX = minX;
 		this->maxX = maxX;
+		this->pathLen = pathLen;
+	}
+
+	void setPathLen(int pathLen){
 		this->pathLen = pathLen;
 	}
 

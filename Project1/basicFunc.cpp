@@ -293,6 +293,15 @@ void init(){
 void idle(){	
 }
 
+void reset_env_variable(){
+	p1.character = rand()%4;
+	int r = rand()%10;
+	myGround.setPathLen(500+50*r);
+	r = rand()%7;
+	myTimer.setTimer(30+2*r);
+	myProgressBar.pathLen = -myGround.pathLen;
+}
+
 void initGame() {
 	myTimer.nowTime = myTimer.time;
 	memset(p1.pos, 0, sizeof(p1.pos));
@@ -394,6 +403,7 @@ void keyboard(unsigned char key,int x,int y){
 
 			memset(p1.pos, 0, sizeof(p1.pos));
 			p1.status = MAIN_MENU;
+			reset_env_variable();
 		}
 	}
 	if(key=='h'){
